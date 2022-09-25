@@ -1,0 +1,59 @@
+version: "3.7"
+services:
+  app:
+    build:
+      args:
+        user: sammy
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: tunepik
+    container_name: tunepik-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    networks:
+      - tunepik
+
+  db:
+    image: mysql:8.0
+    container_name: tunepik-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+    networks:
+      - tunepik
+
+  nginx:
+    image: nginx:1.17-alpine
+    container_name: tunepik-nginx
+    restart: unless-stopped
+    ports:
+      - 8000:80
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/nginx:/etc/nginx/conf.d
+    networks:
+      - tunepik
+
+  redis:
+    image: redis
+    container_name: tunepik-redis
+    restart: unless-stopped
+    ports:
+      - '6379:6379'
+    networks:
+      - tunepik
+
+networks:
+  tunepik:
+    driver: bridge
+  

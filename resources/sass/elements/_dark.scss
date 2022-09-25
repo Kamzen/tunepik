@@ -1,0 +1,122 @@
+
+
+/*@media only screen and (max-width : 700px){*/
+
+  .feed-comment-wrapper{
+    border-top : .03em solid rgba(#6c757d, .100);
+  }
+
+  .main-layout.theme-dark{
+
+    .overlay-wrap{
+      background-color: rgba(211, 211, 211, .175);
+    }
+
+    .item-block > .dark {
+
+      border : .05em solid #fff;
+
+    }
+
+    .record-wrapper{
+
+    -webkit-box-shadow: 0 2px 4px rgba(221, 221, 221, .5);
+      box-shadow: 0 2px 4px rgba(221, 221, 221, .5);
+
+    }
+
+    .desktop-nav{
+      -webkit-box-shadow: 0 .5px .5px rgba(211, 211, 211, .175);
+      box-shadow: 0 .5px .5px rgba(211, 211, 211, .175);
+      border-bottom: rgba(211, 211, 211, .10);
+    }
+
+    .navbar{
+      -webkit-box-shadow: 0 .5px .5px rgba(0, 0, 0, .175);
+      box-shadow: 0 .5px .5px rgba(0, 0, 0, .175);
+    }
+
+    background-color: #222;
+    color : #fff;
+
+    .card,
+    .card-header,
+    .card-body,
+    .list-group,
+    .list-group-item,
+    .app-user-info-nav,
+    .wrapper,
+    .root-element,
+    .root,
+    .app-suggestions,
+    .app-media-body-main,
+    .app-right-side-view,
+    html{
+      background-color: #222;
+    }
+
+    .app-max-text,
+    .app-bolder-text,
+    .app-bold-text,
+    .app-post-text,
+    .app-small-text,
+    .app-fa{
+      color : #fff;
+    }
+
+    .navbar,
+    .bg-white,
+    .record-bottom{
+       background-color : #222;
+    }
+
+    .form-control{
+      background-color : #343a40;
+      color : #fff;
+    }
+
+    .upload-text{
+      color : #fff;
+    }
+
+    .react-round{
+      box-shadow: 0 .5px 1px rgba(211, 211, 211, .100);
+    }
+
+    .skeleton-shimmer{
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(211, 211, 211, .4);
+
+    &::after {
+      position : absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: translateX(-100%);
+      background-image: linear-gradient(
+        90deg,
+        rgba(#223, 0) 0,
+        rgba(#223, .2) 20%,
+        rgba(#223, .5) 60%,
+        rgba(#223, 0) ,
+      );
+      animation: shimmer .3s infinite;
+      content: '';
+
+    }
+
+    @keyframes shimmer{
+
+      100% {
+        transform: translateX(100%);
+      }
+
+    }
+
+  }
+
+  }	
+
+/*}*/

@@ -1,0 +1,53 @@
+@media only screen and (max-width : 700px){
+
+	.visible-xs{
+		display : block !important;
+	}
+
+	.visible-lg{
+		display: none !important;
+	}
+
+   /* 
+      FOR LIGHT MODE THEME
+   */
+  .main-layout.theme-light{
+
+    .overlay-wrap{
+      background-color: rgba(0, 0, 0, .175);
+    }
+
+    .feed-comment-wrapper{
+
+       border-top: .03em solid rgba(#6c757d, .100);
+
+    }
+
+    .wrapper{
+      background-color : #fff;
+    }
+
+    .navbar,
+    .record-bottom{
+      background-color : #fff;
+    }
+
+  }
+
+  }
+
+  @media only screen and (min-width: 700px){
+    .main-layout.theme-light{
+
+      .overlay-wrap{
+        background-color: rgba(0, 0, 0, .175);
+      }
+      
+      .wrapper,
+      .root,
+      .app-media-body-main,
+      .app-right-side-view{
+        background-color : #fff;
+      }
+    }
+  }
